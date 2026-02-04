@@ -114,10 +114,6 @@ node seeds/seedData.js
 npm run dev
 ```
 
-This will start:
-- Backend server on `http://localhost:5000`
-- Frontend development server on `http://localhost:3000`
-
 ## 👥 Default Users
 
 After seeding the database, you can login with:
@@ -202,114 +198,32 @@ After seeding the database, you can login with:
 - `GET /api/cart` - Get user cart
 - `POST /api/cart/add` - Add item to cart
 - `PUT /api/cart/update/:id` - Update cart item
-- `DELETE /api/cart/remove/:id` - Remove cart item
+- `DELETE /api/cart/remove/:id` - Remove cart item<br>
 
-## 🏗 Project Structure
 
-```
-recipe-sharing-platform/
-├── client/                 # React frontend
-│   ├── public/
-│   ├── src/
-│   │   ├── components/     # Reusable UI components
-│   │   │   ├── Auth/       # Authentication components
-│   │   │   ├── Layout/     # Layout components
-│   │   │   └── Recipe/     # Recipe-related components
-│   │   ├── contexts/       # React contexts (Auth)
-│   │   ├── pages/          # Page components
-│   │   └── utils/          # Utility functions
-│   └── package.json
-├── server/                 # Node.js backend
-│   ├── models/             # MongoDB schemas
-│   ├── routes/             # API routes
-│   ├── middleware/         # Custom middleware
-│   └── seeds/              # Database seeding
-└── package.json            # Root package.json
-```
+###Images<br>
+1.Login Page<br>
+<img width="1900" height="922" alt="image" src="https://github.com/user-attachments/assets/ef5e30e8-b8ed-4b41-a737-e1f01284a309" /><br>
+<img width="1909" height="900" alt="image" src="https://github.com/user-attachments/assets/3ab16947-87f0-4562-a8f7-4c07931a5d67" /><br>
+<img width="526" height="722" alt="image" src="https://github.com/user-attachments/assets/ade6c28c-be52-41be-a01d-1860275204cf" /><br>
+<img width="1644" height="842" alt="image" src="https://github.com/user-attachments/assets/6fc1fbef-345d-4bfc-8abc-f0e425898680" /><br>
+<img width="1091" height="879" alt="image" src="https://github.com/user-attachments/assets/e3b06f18-4913-400f-ae52-6fe047922d29" /><br>
+<img width="1906" height="909" alt="image" src="https://github.com/user-attachments/assets/e9987968-015e-49a7-8e74-4825a6519c10" /><br>
+<img width="1834" height="913" alt="image" src="https://github.com/user-attachments/assets/78975c23-7290-4729-bf21-9d63da5b9220" /><br>
+<img width="1756" height="902" alt="image" src="https://github.com/user-attachments/assets/accc67dd-f077-4661-9e45-dc6cd4d204ec" />
 
-## 🔧 Available Scripts
 
-```bash
-# Development mode (runs both client and server)
-npm run dev
 
-# Run server only
-npm run server
 
-# Run client only  
-npm run client
 
-# Build for production
-npm run build
 
-# Seed database with sample data
-cd server && node seeds/seedData.js
-```
 
-## 🐛 Troubleshooting
 
-### Common Issues
 
-1. **MongoDB Connection Error**
-   - Ensure MongoDB is running locally or check your connection string
-   - Verify network access if using MongoDB Atlas
 
-2. **Port Already in Use**
-   - Change ports in environment variables if 3000 or 5000 are occupied
 
-3. **Authentication Issues**
-   - Clear browser localStorage and cookies
-   - Verify JWT_SECRET is set in environment variables
 
-4. **Build Errors**
-   - Delete node_modules and package-lock.json, then reinstall
-   - Ensure Node.js version is 14 or higher
 
-## 🚀 Deployment
-
-### Frontend (Netlify/Vercel)
-1. Build the client: `cd client && npm run build`
-2. Deploy the `build` folder to your hosting service
-3. Set environment variables for API endpoints
-
-### Backend (Heroku/Railway)
-1. Set environment variables on your hosting platform
-2. Deploy the `server` directory
-3. Ensure MongoDB connection string is configured
-
-### Database (MongoDB Atlas)
-1. Create a MongoDB Atlas cluster
-2. Update the `MONGODB_URI` in your environment variables
-3. Configure network access and database users
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 👨‍💻 Author
-
-**Prabesh and many more**
-
-- GitHub: [@yourusername](https://github.com/yourusername)
-- Email: your.email@example.com
-
-## 🙏 Acknowledgments
-
-- Thanks to all contributors who helped build this platform
-- Inspired by modern e-commerce and recipe sharing platforms
-- Built with love for food enthusiasts and developers
-
-## 📞 Support
-
-If you have any questions or need help with setup, please open an issue or contact the development team.
 
 ---
 
