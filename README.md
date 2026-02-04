@@ -1,123 +1,208 @@
-# Recipe Sharing Platform
+# 🍳 Recipe Sharing Platform
 
-A modern, full-stack recipe sharing platform built with React.js, Node.js, and MongoDB. Features intelligent recipe recommendations, advanced search capabilities, and a beautiful, responsive user interface.
+A comprehensive full-stack recipe sharing platform built with React.js, Node.js, Express, and MongoDB. Features a complete admin system, user authentication, premium recipes, shopping cart, and order management with comprehensive billing.
 
-## 🚀 Features
+## ✨ Features
 
-### Core Features
-- **User Authentication** - Secure registration and login system
-- **Recipe Management** - Create, edit, delete, and share recipes
-- **Advanced Search** - Search by ingredients, cuisine, dietary preferences, and more
-- **Recipe Ratings & Reviews** - Rate and review recipes from other users
-- **User Profiles** - Customizable profiles with favorite recipes and following system
-- **Responsive Design** - Works perfectly on desktop, tablet, and mobile devices
+### 🔐 User Authentication & Roles
+- **User Registration & Login** with JWT authentication
+- **Two-role system**: Admin and User
+- **Protected routes** with role-based access control
+- **Admin dashboard** with comprehensive management tools
 
-### Smart Algorithms
-- **Collaborative Filtering** - Recommendations based on similar users' preferences
-- **Content-Based Filtering** - Suggestions based on recipe similarity
-- **Hybrid Recommendation System** - Combines multiple algorithms for better accuracy
-- **Trending Algorithm** - Identifies popular recipes based on views, ratings, and favorites
-- **Personalized Feed** - Customized recipe suggestions based on user preferences
+### 👨‍🍳 Recipe Management
+- **Create, edit, and delete recipes** (Admin only)
+- **Premium recipe system** with pricing in Nepali Rupees (Rs)
+- **Recipe categories**: Appetizers, Main Course, Desserts, Beverages
+- **Difficulty levels**: Easy, Medium, Hard
+- **Cooking time and servings** information
+- **High-quality recipe images** with proper matching
+- **Recipe ratings and reviews** (Users only)
 
-### Advanced Features
-- **Real-time Search** - Instant search results with fuzzy matching
-- **Image Upload** - Support for recipe images with Cloudinary integration
-- **Dietary Filters** - Filter by vegetarian, vegan, gluten-free, keto, etc.
-- **Cooking Time Estimation** - Smart time calculations for meal planning
-- **Nutritional Information** - Track calories, protein, carbs, and more
-- **Social Features** - Follow users, favorite recipes, and build your cooking community
+### 🛒 E-commerce Features
+- **Shopping cart** with quantity management
+- **Professional checkout system** with comprehensive billing
+- **Multiple payment methods**: Card, Cash on Delivery, Bank Transfer
+- **Order management** with status tracking
+- **Invoice generation** with automatic numbering
+- **Tax calculation** (8%) and delivery fees
 
-## 🛠 Tech Stack
+### 👑 Comprehensive Admin System
+- **Real-time dashboard** with analytics and statistics
+- **Order approval workflow** - Admin must approve all orders
+- **User management** with detailed analytics
+- **Revenue tracking** in Nepali Rupees
+- **Order status management** (Pending → Confirmed → Preparing → Delivered)
+- **Activity monitoring** with real-time feeds
+- **Business intelligence** with comprehensive reporting
+
+### 🎨 Modern UI/UX
+- **Responsive design** for all devices
+- **Professional gradient styling** with modern aesthetics
+- **Smooth animations** with Framer Motion
+- **Styled Components** for consistent theming
+- **Loading states** and error handling
+- **Toast notifications** for user feedback
+
+## 🚀 Tech Stack
 
 ### Frontend
-- **React.js** - Modern UI library with hooks
+- **React.js** - UI library
 - **React Router** - Client-side routing
+- **React Query** - Server state management
 - **Styled Components** - CSS-in-JS styling
-- **Framer Motion** - Smooth animations and transitions
-- **React Query** - Data fetching and caching
-- **React Hook Form** - Form handling and validation
-- **Axios** - HTTP client for API calls
+- **Framer Motion** - Animations
+- **React Hot Toast** - Notifications
+- **Axios** - HTTP client
 
 ### Backend
-- **Node.js** - JavaScript runtime
-- **Express.js** - Web application framework
-- **MongoDB** - NoSQL database
-- **Mongoose** - MongoDB object modeling
-- **JWT** - JSON Web Tokens for authentication
-- **Bcrypt** - Password hashing
-- **Cloudinary** - Image storage and optimization
-- **Express Rate Limit** - API rate limiting
-- **Helmet** - Security middleware
+- **Node.js** - Runtime environment
+- **Express.js** - Web framework
+- **MongoDB** - Database
+- **Mongoose** - ODM
+- **JWT** - Authentication
+- **bcryptjs** - Password hashing
+- **CORS** - Cross-origin requests
 
-### Development Tools
-- **Concurrently** - Run multiple commands simultaneously
-- **Nodemon** - Auto-restart server during development
-- **ESLint** - Code linting
-- **Prettier** - Code formatting
-
-## 📦 Quick Setup
+## 📦 Installation & Setup
 
 ### Prerequisites
 - Node.js (v14 or higher)
-- MongoDB (local or cloud instance)
+- MongoDB (local or cloud)
 - npm or yarn
 
-### One-Command Setup
+### 1. Clone the repository
 ```bash
-# Clone and setup everything
-git clone <repository-url>
+git clone https://github.com/yourusername/recipe-sharing-platform.git
 cd recipe-sharing-platform
-npm run setup
 ```
 
-### Manual Setup
+### 2. Install dependencies
+```bash
+# Install root dependencies
+npm install
 
-1. **Clone the repository**
-   ```bash
-   git clone <repository-url>
-   cd recipe-sharing-platform
-   ```
+# Install server dependencies
+cd server
+npm install
 
-2. **Install dependencies**
-   ```bash
-   npm run install-all
-   ```
+# Install client dependencies
+cd ../client
+npm install
+```
 
-3. **Environment Configuration**
-   
-   The setup script creates a `.env` file in the `server` directory. Update it with your settings:
-   ```env
-   PORT=5000
-   MONGODB_URI=mongodb://localhost:27017/recipe-platform
-   JWT_SECRET=your-super-secret-jwt-key-change-this-in-production
-   NODE_ENV=development
-   ```
+### 3. Environment Setup
+Create a `.env` file in the `server` directory:
+```env
+PORT=5000
+MONGODB_URI=mongodb://localhost:27017/recipe-platform
+JWT_SECRET=your-super-secret-jwt-key-here
+NODE_ENV=development
+```
 
-4. **Start MongoDB**
-   
-   **Local MongoDB:**
-   ```bash
-   # macOS with Homebrew
-   brew services start mongodb-community
-   
-   # Ubuntu/Linux
-   sudo systemctl start mongod
-   
-   # Windows
-   net start MongoDB
-   ```
-   
-   **Or use MongoDB Atlas** (cloud) and update the `MONGODB_URI`
+### 4. Database Setup
+```bash
+# Start MongoDB service
+# Then seed the database with sample data
+cd server
+node seeds/seedData.js
+```
 
-5. **Run the application**
-   ```bash
-   npm run dev
-   ```
+### 5. Run the application
+```bash
+# From the root directory
+npm run dev
+```
 
-6. **Access the application**
-   - Frontend: http://localhost:3000
-   - Backend API: http://localhost:5000
-   - Health Check: http://localhost:5000/api/health
+This will start:
+- Backend server on `http://localhost:5000`
+- Frontend development server on `http://localhost:3000`
+
+## 👥 Default Users
+
+After seeding the database, you can login with:
+
+### Admin Account
+- **Email**: admin@recipeplatform.com
+- **Password**: admin123
+- **Role**: Admin (can create recipes, manage users, approve orders)
+
+### User Account
+- **Email**: user@example.com
+- **Password**: user123
+- **Role**: User (can shop, rate recipes, place orders)
+
+## 🎯 Usage Guide
+
+### For Users
+1. **Register/Login** to access the platform
+2. **Browse recipes** on the home page
+3. **Add premium recipes** to cart
+4. **Proceed to checkout** with comprehensive billing
+5. **Wait for admin approval** of your order
+6. **Rate and review** delivered orders
+
+### For Admins
+1. **Login** and get redirected to admin dashboard
+2. **Create new recipes** with pricing and images
+3. **Manage users** and view their analytics
+4. **Approve/reject orders** from users
+5. **Update order status** throughout fulfillment
+6. **Monitor platform** with real-time analytics
+
+## 📊 Key Features Breakdown
+
+### Order Management System
+- **Comprehensive billing** with customer details
+- **Admin approval workflow** for all orders
+- **Status tracking** with history
+- **Invoice generation** with automatic numbering
+- **Payment method** support and tracking
+
+### Admin Analytics
+- **Revenue tracking** in Nepali Rupees
+- **User growth** and activity monitoring
+- **Order statistics** by status and time period
+- **Recipe performance** analytics
+- **Payment method** distribution
+- **Top customers** by spending
+
+### Business Features
+- **Pricing in Nepali Rupees** (Rs 750 - Rs 4,500)
+- **Tax calculation** (8% on all orders)
+- **Delivery fees** (Rs 300, free over Rs 5,000)
+- **Coupon system** support
+- **Professional invoicing**
+
+## 🔧 API Endpoints
+
+### Authentication
+- `POST /api/auth/register` - User registration
+- `POST /api/auth/login` - User login
+- `GET /api/auth/me` - Get current user
+
+### Recipes
+- `GET /api/recipes` - Get all recipes
+- `POST /api/recipes` - Create recipe (Admin only)
+- `PUT /api/recipes/:id` - Update recipe (Admin only)
+- `DELETE /api/recipes/:id` - Delete recipe (Admin only)
+
+### Orders
+- `GET /api/orders` - Get user orders
+- `POST /api/orders` - Create order
+- `PUT /api/orders/:id/payment` - Update payment status
+
+### Admin
+- `GET /api/admin/dashboard` - Dashboard statistics
+- `GET /api/admin/users` - User management
+- `GET /api/admin/orders` - Order management
+- `PUT /api/admin/orders/:id/approve` - Approve/reject orders
+
+### Cart
+- `GET /api/cart` - Get user cart
+- `POST /api/cart/add` - Add item to cart
+- `PUT /api/cart/update/:id` - Update cart item
+- `DELETE /api/cart/remove/:id` - Remove cart item
 
 ## 🏗 Project Structure
 
@@ -127,28 +212,24 @@ recipe-sharing-platform/
 │   ├── public/
 │   ├── src/
 │   │   ├── components/     # Reusable UI components
-│   │   ├── contexts/       # React contexts (Auth, etc.)
+│   │   │   ├── Auth/       # Authentication components
+│   │   │   ├── Layout/     # Layout components
+│   │   │   └── Recipe/     # Recipe-related components
+│   │   ├── contexts/       # React contexts (Auth)
 │   │   ├── pages/          # Page components
-│   │   ├── hooks/          # Custom React hooks
-│   │   ├── utils/          # Utility functions
-│   │   └── styles/         # Global styles
+│   │   └── utils/          # Utility functions
 │   └── package.json
 ├── server/                 # Node.js backend
 │   ├── models/             # MongoDB schemas
 │   ├── routes/             # API routes
 │   ├── middleware/         # Custom middleware
-│   ├── utils/              # Utility functions
-│   └── package.json
-├── package.json            # Root package.json
-└── README.md
+│   └── seeds/              # Database seeding
+└── package.json            # Root package.json
 ```
 
 ## 🔧 Available Scripts
 
 ```bash
-# Setup everything (recommended for first time)
-npm run setup
-
 # Development mode (runs both client and server)
 npm run dev
 
@@ -161,87 +242,35 @@ npm run client
 # Build for production
 npm run build
 
-# Install all dependencies manually
-npm run install-all
+# Seed database with sample data
+cd server && node seeds/seedData.js
 ```
 
 ## 🐛 Troubleshooting
 
-If you encounter issues, check the [TROUBLESHOOTING.md](TROUBLESHOOTING.md) file for common problems and solutions.
+### Common Issues
 
-**Quick fixes:**
-- Ensure MongoDB is running
-- Check Node.js version (14+ required)  
-- Verify all dependencies are installed
-- Check that ports 3000 and 5000 are available
+1. **MongoDB Connection Error**
+   - Ensure MongoDB is running locally or check your connection string
+   - Verify network access if using MongoDB Atlas
 
-## 🐛 Troubleshooting
+2. **Port Already in Use**
+   - Change ports in environment variables if 3000 or 5000 are occupied
 
-If you encounter issues, check the [TROUBLESHOOTING.md](TROUBLESHOOTING.md) file for common problems and solutions.
+3. **Authentication Issues**
+   - Clear browser localStorage and cookies
+   - Verify JWT_SECRET is set in environment variables
 
-**Quick fixes:**
-- Ensure MongoDB is running
-- Check Node.js version (14+ required)
-- Verify all dependencies are installed
-- Check that ports 3000 and 5000 are available
-
-### Authentication
-- `POST /api/auth/register` - User registration
-- `POST /api/auth/login` - User login
-- `GET /api/auth/me` - Get current user
-- `PUT /api/auth/profile` - Update user profile
-
-### Recipes
-- `GET /api/recipes` - Get all recipes (with filtering)
-- `GET /api/recipes/:id` - Get single recipe
-- `POST /api/recipes` - Create new recipe
-- `PUT /api/recipes/:id` - Update recipe
-- `DELETE /api/recipes/:id` - Delete recipe
-- `POST /api/recipes/:id/rate` - Rate a recipe
-- `POST /api/recipes/:id/favorite` - Toggle favorite
-
-### Recommendations
-- `GET /api/recommendations/for-you` - Personalized recommendations
-- `GET /api/recommendations/trending` - Trending recipes
-- `GET /api/recommendations/similar/:id` - Similar recipes
-
-### Users
-- `GET /api/users/:id` - Get user profile
-- `POST /api/users/:id/follow` - Follow/unfollow user
-- `GET /api/users/:id/followers` - Get user followers
-- `GET /api/users/:id/following` - Get user following
-
-## 🤖 Recommendation Algorithms
-
-### 1. Collaborative Filtering
-Uses Pearson correlation coefficient to find users with similar tastes and recommend recipes they liked.
-
-### 2. Content-Based Filtering
-Analyzes recipe features (cuisine, difficulty, cooking time, dietary tags) to find similar recipes.
-
-### 3. Hybrid Approach
-Combines collaborative and content-based filtering with popularity-based recommendations for optimal results.
-
-### 4. Trending Algorithm
-Calculates trending scores based on:
-- Views (30% weight)
-- Favorites (40% weight)
-- Ratings (30% weight)
-
-## 🎨 UI/UX Features
-
-- **Modern Design** - Clean, intuitive interface with smooth animations
-- **Responsive Layout** - Optimized for all screen sizes
-- **Dark/Light Mode** - User preference-based theming
-- **Loading States** - Skeleton screens and spinners for better UX
-- **Error Handling** - Graceful error messages and fallbacks
-- **Accessibility** - WCAG compliant with keyboard navigation support
+4. **Build Errors**
+   - Delete node_modules and package-lock.json, then reinstall
+   - Ensure Node.js version is 14 or higher
 
 ## 🚀 Deployment
 
 ### Frontend (Netlify/Vercel)
 1. Build the client: `cd client && npm run build`
 2. Deploy the `build` folder to your hosting service
+3. Set environment variables for API endpoints
 
 ### Backend (Heroku/Railway)
 1. Set environment variables on your hosting platform
@@ -256,27 +285,34 @@ Calculates trending scores based on:
 ## 🤝 Contributing
 
 1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/amazing-feature`
-3. Commit your changes: `git commit -m 'Add amazing feature'`
-4. Push to the branch: `git push origin feature/amazing-feature`
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
 ## 📝 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+## 👨‍💻 Author
+
+**Prabesh and many more**
+
+- GitHub: [@yourusername](https://github.com/yourusername)
+- Email: your.email@example.com
+
 ## 🙏 Acknowledgments
 
-- Recipe data and inspiration from various cooking communities
-- Icons from React Icons library
-- Images from Unsplash and Pexels
-- MongoDB for excellent documentation
-- React community for amazing tools and libraries
+- Thanks to all contributors who helped build this platform
+- Inspired by modern e-commerce and recipe sharing platforms
+- Built with love for food enthusiasts and developers
 
 ## 📞 Support
 
 If you have any questions or need help with setup, please open an issue or contact the development team.
 
 ---
+
+⭐ **Star this repository if you found it helpful!**
 
 **Happy Cooking! 🍳👨‍🍳👩‍🍳**
