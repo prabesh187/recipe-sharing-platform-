@@ -210,7 +210,10 @@ After seeding the database, you can login with:
 <img width="1091" height="879" alt="image" src="https://github.com/user-attachments/assets/e3b06f18-4913-400f-ae52-6fe047922d29" /><br>
 <img width="1906" height="909" alt="image" src="https://github.com/user-attachments/assets/e9987968-015e-49a7-8e74-4825a6519c10" /><br>
 <img width="1834" height="913" alt="image" src="https://github.com/user-attachments/assets/78975c23-7290-4729-bf21-9d63da5b9220" /><br>
-<img width="1756" height="902" alt="image" src="https://github.com/user-attachments/assets/accc67dd-f077-4661-9e45-dc6cd4d204ec" />
+<img width="1756" height="902" alt="image" src="https://github.com/user-attachments/assets/accc67dd-f077-4661-9e45-dc6cd4d204ec" /><br>
+
+
+Full projects is not completed
 
 
 
