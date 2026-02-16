@@ -194,11 +194,7 @@ After seeding the database, you can login with:
 - `GET /api/admin/orders` - Order management
 - `PUT /api/admin/orders/:id/approve` - Approve/reject orders
 
-### Cart
-- `GET /api/cart` - Get user cart
-- `POST /api/cart/add` - Add item to cart
-- `PUT /api/cart/update/:id` - Update cart item
-- `DELETE /api/cart/remove/:id` - Remove cart item<br>
+
 
 
 ###Images<br>
