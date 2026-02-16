@@ -177,22 +177,11 @@ After seeding the database, you can login with:
 - `POST /api/auth/login` - User login
 - `GET /api/auth/me` - Get current user
 
-### Recipes
-- `GET /api/recipes` - Get all recipes
-- `POST /api/recipes` - Create recipe (Admin only)
-- `PUT /api/recipes/:id` - Update recipe (Admin only)
-- `DELETE /api/recipes/:id` - Delete recipe (Admin only)
 
-### Orders
-- `GET /api/orders` - Get user orders
-- `POST /api/orders` - Create order
-- `PUT /api/orders/:id/payment` - Update payment status
 
-### Admin
-- `GET /api/admin/dashboard` - Dashboard statistics
-- `GET /api/admin/users` - User management
-- `GET /api/admin/orders` - Order management
-- `PUT /api/admin/orders/:id/approve` - Approve/reject orders
+
+
+
 
 
 
