@@ -3,7 +3,6 @@ import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import { useAuth } from '../contexts/AuthContext';
-import axios from 'axios';
 
 const Container = styled.div`
   min-height: calc(100vh - 140px);
@@ -259,15 +258,9 @@ const Login = () => {
     const result = await login(formData.email, formData.password);
     
     if (result.success) {
-      // Check if user is admin and redirect to admin dashboard
-      const response = await axios.get('/api/auth/me');
-      const user = response.data;
-      
-      if (user.role === 'admin') {
-        navigate('/admin', { replace: true });
-      } else {
-        navigate(from, { replace: true });
-      }
+      // Always redirect to home page after login, regardless of role
+      // Admin can navigate to dashboard via navbar if needed
+      navigate(from, { replace: true });
     } else {
       setError(result.error);
     }

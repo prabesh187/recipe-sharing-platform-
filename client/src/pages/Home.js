@@ -133,17 +133,8 @@ const Home = () => {
     }
   );
 
-  // Redirect admin to dashboard immediately
-  useEffect(() => {
-    if (user && user.role === 'admin') {
-      navigate('/admin', { replace: true });
-    }
-  }, [user, navigate]);
-  
-  // Don't render home page for admin - but do this AFTER all hooks
-  if (user && user.role === 'admin') {
-    return null;
-  }
+  // Remove automatic admin redirection - let admins see the home page too
+  // Admin can manually navigate to dashboard via navbar
 
   return (
     <motion.div
